@@ -1,3 +1,28 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+#legend svg {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+#treemap svg {
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background: white;
+}
+
+/* script.js */
 document.addEventListener("DOMContentLoaded", function () {
   const width = 1000;
   const height = 600;
@@ -50,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .attr("fill", "#fff")
       .style("pointer-events", "none");
 
-    // Add legend
+    // Legend
     const legend = d3.select("#legend")
       .append("svg")
       .attr("width", 1000)
