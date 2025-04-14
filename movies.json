@@ -1,68 +1,47 @@
 {
   "name": "Movies",
   "children": [
-    {
-      "name": "Action",
-      "children": [
-        { "name": "Avengers: Endgame", "value": 2797 },
-        { "name": "Avengers: Infinity War", "value": 2048 },
-        { "name": "Furious 7", "value": 1515 },
-        { "name": "Captain America: Civil War", "value": 1153 }
-      ]
-    },
-    {
-      "name": "Adventure",
-      "children": [
-        { "name": "Avatar: The Way of Water", "value": 2320 },
-        { "name": "Jurassic World", "value": 1671 },
-        { "name": "The Jungle Book", "value": 966 },
-        { "name": "The Revenant", "value": 533 }
-      ]
-    },
-    {
-      "name": "Comedy",
-      "children": [
-        { "name": "Barbie", "value": 1447 },
-        { "name": "The Hangover", "value": 467 },
-        { "name": "Jumanji: Welcome to the Jungle", "value": 962 },
-        { "name": "Deadpool", "value": 783 }
-      ]
-    },
-    {
-      "name": "Drama",
-      "children": [
-        { "name": "Oppenheimer", "value": 972 },
-        { "name": "The Godfather", "value": 246 },
-        { "name": "Forrest Gump", "value": 678 },
-        { "name": "La La Land", "value": 446 }
-      ]
-    },
-    {
-      "name": "Animation",
-      "children": [
-        { "name": "Frozen II", "value": 1450 },
-        { "name": "Inside Out", "value": 857 },
-        { "name": "The Super Mario Bros. Movie", "value": 1361 },
-        { "name": "Zootopia", "value": 1024 }
-      ]
-    },
-    {
-      "name": "Family",
-      "children": [
-        { "name": "The Lion King (2019)", "value": 1663 },
-        { "name": "Minions", "value": 1159 },
-        { "name": "Finding Dory", "value": 1029 },
-        { "name": "Despicable Me 3", "value": 1034 }
-      ]
-    },
-    {
-      "name": "Biography",
-      "children": [
-        { "name": "Bohemian Rhapsody", "value": 911 },
-        { "name": "Rocketman", "value": 195 },
-        { "name": "The Theory of Everything", "value": 123 },
-        { "name": "King Richard", "value": 93 }
-      ]
-    }
+    { "name": "Action", "children": [
+      { "name": "Avengers: Endgame", "value": 2797 },
+      { "name": "Avengers: Infinity War", "value": 2048 },
+      { "name": "Furious 7", "value": 1515 },
+      { "name": "Captain America: Civil War", "value": 1153 }
+    ]},
+    { "name": "Adventure", "children": [
+      { "name": "Avatar: The Way of Water", "value": 2320 },
+      { "name": "Jurassic World", "value": 1671 },
+      { "name": "The Jungle Book", "value": 966 },
+      { "name": "The Revenant", "value": 533 }
+    ]},
+    { "name": "Comedy", "children": [
+      { "name": "Barbie", "value": 1447 },
+      { "name": "The Hangover", "value": 467 },
+      { "name": "Jumanji: Welcome to the Jungle", "value": 962 },
+      { "name": "Deadpool", "value": 783 }
+    ]},
+    { "name": "Drama", "children": [
+      { "name": "Oppenheimer", "value": 972 },
+      { "name": "The Godfather", "value": 246 },
+      { "name": "Forrest Gump", "value": 678 },
+      { "name": "La La Land", "value": 446 }
+    ]},
+    { "name": "Animation", "children": [
+      { "name": "Frozen II", "value": 1450 },
+      { "name": "Inside Out", "value": 857 },
+      { "name": "The Super Mario Bros. Movie", "value": 1361 },
+      { "name": "Zootopia", "value": 1024 }
+    ]},
+    { "name": "Family", "children": [
+      { "name": "The Lion King (2019)", "value": 1663 },
+      { "name": "Minions", "value": 1159 },
+      { "name": "Finding Dory", "value": 1029 },
+      { "name": "Despicable Me 3", "value": 1034 }
+    ]},
+    { "name": "Biography", "children": [
+      { "name": "Bohemian Rhapsody", "value": 911 },
+      { "name": "Rocketman", "value": 195 },
+      { "name": "The Theory of Everything", "value": 123 },
+      { "name": "King Richard", "value": 93 }
+    ]}
   ]
 }
