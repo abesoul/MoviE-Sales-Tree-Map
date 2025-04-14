@@ -1,108 +1,83 @@
-// Set up dimensions and margins for the tree map
-const width = 960;
+const width = 1000;
 const height = 600;
 
-// Set up color scale
-const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
-
-// Set body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 20px;
-  background: #f9f9f9;
-  color: #333;
-  text-align: center;
-}
-
-h1 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-#tree-map {
-  margin: auto;
-  width: 1000px;
-  height: 600px;
-}
-
-.tooltip {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 8px;
-  border-radius: 5px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-#legend svg {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-up tooltip
 const tooltip = d3.select("#tooltip");
 
-// Set up the SVG canvas
 const svg = d3.select("#tree-map")
+  .append("svg")
   .attr("width", width)
   .attr("height", height);
 
-// Load the movie sales data
-d3.json("https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json").then(data => {
-  
-  // Create a hierarchical structure for the data using d3.hierarchy
+d3.json("movies.json").then(data => {
   const root = d3.hierarchy(data)
     .sum(d => d.value)
     .sort((a, b) => b.value - a.value);
 
-  // Create the treemap layout
-  const treemap = d3.treemap()
+  d3.treemap()
     .size([width, height])
-    .padding(1);
+    .padding(1)
+    (root);
 
-  treemap(root);
+  const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+  const genres = root.children.map(d => d.data.name);
+  colorScale.domain(genres);
 
-  // Create the tiles (rectangles) for the tree map
-  svg.selectAll(".tile")
+  svg.selectAll("rect")
     .data(root.leaves())
     .enter()
     .append("rect")
-    .attr("class", "tile")
     .attr("x", d => d.x0)
     .attr("y", d => d.y0)
     .attr("width", d => d.x1 - d.x0)
     .attr("height", d => d.y1 - d.y0)
-    .style("fill", d => colorScale(d.data.category))
+    .attr("fill", d => colorScale(d.parent.data.name))
     .attr("data-name", d => d.data.name)
-    .attr("data-category", d => d.data.category)
+    .attr("data-category", d => d.parent.data.name)
     .attr("data-value", d => d.data.value)
-    .on("mouseover", (event, d) => {
-      tooltip.transition().duration(200).style("display", "block");
-      tooltip.html(`${d.data.name}: $${d.data.value} million`)
-        .attr("data-value", d.data.value)
-        .style("left", (event.pageX + 5) + "px")
-        .style("top", (event.pageY + 5) + "px");
+    .on("mousemove", (event, d) => {
+      tooltip
+        .style("opacity", 1)
+        .html(
+          `<strong>${d.data.name}</strong><br/>
+           Genre: ${d.parent.data.name}<br/>
+           Revenue: $${d.data.value}M`
+        )
+        .style("left", (event.pageX + 10) + "px")
+        .style("top", (event.pageY - 20) + "px");
     })
     .on("mouseout", () => {
-      tooltip.transition().duration(200).style("display", "none");
+      tooltip.style("opacity", 0);
     });
 
-  // Create the legend
-  const legend = d3.select("#legend");
+  svg.selectAll("text")
+    .data(root.leaves())
+    .enter()
+    .append("text")
+    .attr("x", d => d.x0 + 5)
+    .attr("y", d => d.y0 + 20)
+    .text(d => d.data.name)
+    .attr("font-size", "12px")
+    .attr("fill", "white")
+    .attr("pointer-events", "none");
 
-  // Get unique categories from the data
-  const categories = Array.from(new Set(root.leaves().map(d => d.data.category)));
+  // Legend
+  const legend = d3.select("#legend")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", 50);
 
-  // Create a legend for each category
-  categories.forEach(category => {
-    const legendItem = legend.append("div")
-      .attr("class", "legend-item");
+  genres.forEach((genre, i) => {
+    legend.append("rect")
+      .attr("x", i * 100)
+      .attr("y", 10)
+      .attr("width", 18)
+      .attr("height", 18)
+      .attr("fill", colorScale(genre));
 
-    legendItem.append("div")
-      .attr("class", "legend-color")
-      .style("background-color", colorScale(category));
-
-    legendItem.append("span").text(category);
+    legend.append("text")
+      .attr("x", i * 100 + 24)
+      .attr("y", 24)
+      .text(genre)
+      .attr("font-size", "12px");
   });
 });
