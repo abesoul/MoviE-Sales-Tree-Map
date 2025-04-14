@@ -1,6 +1,3 @@
-# MoviE-Sales-Tree-Map
-# README.md
-
 # Movie Sales Tree Map
 
 A visual treemap representation of top-grossing movies over the last 10 years across popular genres.
