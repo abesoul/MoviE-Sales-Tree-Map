@@ -5,7 +5,42 @@ const height = 600;
 // Set up color scale
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
-// Set up tooltip
+// Set body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+  background: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+#tree-map {
+  margin: auto;
+  width: 1000px;
+  height: 600px;
+}
+
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+#legend svg {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+up tooltip
 const tooltip = d3.select("#tooltip");
 
 // Set up the SVG canvas
