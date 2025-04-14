@@ -1,0 +1,26 @@
+{
+  "name": "Movies",
+  "children": [
+    {
+      "name": "Action",
+      "children": [
+        { "name": "Avengers: Endgame", "value": 2797 },
+        { "name": "Black Panther", "value": 1347 }
+      ]
+    },
+    {
+      "name": "Comedy",
+      "children": [
+        { "name": "The Hangover", "value": 467 },
+        { "name": "Step Brothers", "value": 128 }
+      ]
+    },
+    {
+      "name": "Drama",
+      "children": [
+        { "name": "The Godfather", "value": 246 },
+        { "name": "Forrest Gump", "value": 678 }
+      ]
+    }
+  ]
+}
