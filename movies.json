@@ -5,21 +5,50 @@
       "name": "Action",
       "children": [
         { "name": "Avengers: Endgame", "value": 2797 },
+        { "name": "Avengers: Infinity War", "value": 2048 },
+        { "name": "Captain America: Brave New World", "value": 413 },
+        { "name": "Furious 7", "value": 1515 },
+        { "name": "Jurassic World", "value": 1671 }
+      ]
+    },
+    {
+      "name": "Animation",
+      "children": [
+        { "name": "Inside Out 2", "value": 1699 },
+        { "name": "Frozen II", "value": 1450 },
+        { "name": "Minions", "value": 1159 },
+        { "name": "The Super Mario Bros. Movie", "value": 1361 },
+        { "name": "Ne Zha 2", "value": 1898 }
+      ]
+    },
+    {
+      "name": "Sci-Fi",
+      "children": [
+        { "name": "Avatar: The Way of Water", "value": 2320 },
+        { "name": "Star Wars: The Force Awakens", "value": 2068 },
+        { "name": "Spider-Man: No Way Home", "value": 1923 },
+        { "name": "Avengers: Age of Ultron", "value": 1403 },
         { "name": "Black Panther", "value": 1347 }
       ]
     },
     {
-      "name": "Comedy",
+      "name": "Musical",
       "children": [
-        { "name": "The Hangover", "value": 467 },
-        { "name": "Step Brothers", "value": 128 }
+        { "name": "Wicked", "value": 634 },
+        { "name": "The Lion King (2019)", "value": 1663 },
+        { "name": "Beauty and the Beast (2017)", "value": 1263 },
+        { "name": "Frozen", "value": 1280 },
+        { "name": "Moana 2", "value": 882 }
       ]
     },
     {
       "name": "Drama",
       "children": [
+        { "name": "Barbie", "value": 1447 },
         { "name": "The Godfather", "value": 246 },
-        { "name": "Forrest Gump", "value": 678 }
+        { "name": "Forrest Gump", "value": 678 },
+        { "name": "The Revenant", "value": 533 },
+        { "name": "La La Land", "value": 446 }
       ]
     }
   ]
