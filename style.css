@@ -1,54 +1,35 @@
-/* Basic styling for body */
 body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 20px;
-}
-
-#title {
-  font-size: 2em;
-}
-
-#description {
-  font-size: 1.2em;
-  margin-top: 10px;
-  width: 90%;
+  background: #f9f9f9;
+  color: #333;
   text-align: center;
 }
 
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
 #tree-map {
-  width: 960px;
+  margin: auto;
+  width: 1000px;
   height: 600px;
-  margin-top: 20px;
-  border: 1px solid #ccc;
 }
 
-#tooltip {
+.tooltip {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 8px;
   border-radius: 5px;
-  display: none;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
-#legend {
+#legend svg {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-}
-
-.legend-color {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
 }
